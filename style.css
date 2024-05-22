@@ -1,0 +1,901 @@
+/* Author: Jackson Powell
+
+Version: 0.75
+Last Updated: May 16th, 2024
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/homer-simpson-revised');
+/* =========================    GLOBAL STYLES    ========================= */
+
+body {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    margin: 0;
+}
+
+h1 {
+    font-size: 7.5em;
+    text-align: center;
+    color: azure;
+    font-family: 'Homer Simpson Revised', sans-serif;
+    text-shadow: 5px 5px 10px black;
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    
+    /* NOTES (11th May 2024) Wanted to have a effect behind the text to help make it readable on screen in front of either the banner or video on home page, thought about a background color and blurring it via filter, but that doesnt work, turns out its just a simple text-shadow tag, curtosy of W3Schools (https://www.w3schools.com/cssref/css3_pr_text-shadow.php) for code */
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 650;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+a {
+    color: crimson;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:visited {
+    color: lightcoral;
+}
+
+    /* =========================    HEADER    ========================= */
+
+#wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    visibility: hidden;
+}
+
+  /* =========================    NAVIGATION    ========================= */
+
+nav {
+    background-color: black;
+    width: 100%; /* = 1200px */
+    position: fixed;
+    top: 0%; left: 0%;
+    padding-top: 30px; padding-bottom: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+nav a {
+    padding: 100px;
+}
+
+nav a:hover{
+    background-color: gainsboro;
+    color: crimson;
+    padding-left: 100px; right: 100px; top: 50px; 
+    padding-bottom: 20px;
+}
+
+/* MISSIONS PAGE SUB-NAV BAR */
+
+#missionsnav {
+    text-align: center;
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    font-size: 0.5em;
+    padding-top: 15px; padding-bottom: 15px;
+    z-index: 1;
+}
+
+/* NOTES (26/04/24) https://www.w3schools.com/howto/howto_js_navbar_slide.asp */
+
+/* NOTES (02/05/24) A suggestion made from the lecturer was to make the secondary nav bar appear anywhere outside of where the main nav bar should be, at first I tried to have the missions bar appear from below as you scroll down, but there was issues (potentially related to the missions bar's position being fixed which could have caused it) so another solution was to alter the main navigation bar to be fixed aswell, and have the missions bar appear below that one. The solution to that wasnt too much of a problem as I reffered back to the content I have learned and the use of the z-index: code, to make sure the main nav is in front of the secondary one, and the secondary one doesnt go behind the text, I set the z-index to 2, and 1 respectivley. And adjusted the placement of the missions bar. Thinking ahead, I think the missions bar will have to be removed from the mobile view as there will only be so much avaliable view. */
+
+#missionsnav a {
+    padding: 10px;
+    color: gold;
+}
+
+#missionsnav b {
+    color: white;
+    font-size: 2em;
+    padding: 2%;
+}
+
+#missionsnav a:hover {
+    background-color: #ddd;
+    color: black;
+    padding: 20px;
+}
+
+    /* ============================     MAIN CONTENT   ============================ */
+
+/* HOME PAGE VIDEO */
+
+.homevid {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0%;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+.abouth1 {
+    padding-top: 5%;
+}
+
+.levelsh1 {
+    padding-top: 5%;
+}
+
+.cheatsh1{
+    padding-top: 5%;
+}
+
+.lvl1h1 {
+    padding-top: 5%;
+}
+
+/*    
+    NOTES (26/04/24) One of the first bits of CSS I researched during my project proposal, was blurring out media to serve as a banner, I reckon it gives it a unique, slick, modern presentation, but as I implemented it, there were problems that made me reconsider the max-width of the website. When blurring out the content, the edges also get blurred out, so the borders wont be consistent, my decision was to transform the scale of the content to fill the entire screen and increase the padding for the content areas to give them space from the banner content, I think the result looks great but will need some adjustments when altering sizes to fit tablet/mobile.
+
+/* 
+    NOTES (11/05/2024) Dont know why I was thinking that changing an ID to a class was a pain, it REALLY ISNT, it was just chaning the # to a . in CSS and renaming id= to class=, guess there is just a lot of stress going on. */
+
+/* ================ BANNER IMAGE (USED ACROSS ALL PAGES EXCEPT HOME) ===================== */
+
+.bannerimage {
+    position: absolute;
+    width: 60%;
+    height: auto;
+    left: 17%;
+    top: 220px;
+    z-index: -1;
+    filter: blur(3px);
+    transform: scale(1.88);
+}
+
+/*INDEX PAGE CONTENT AREA ONE */
+
+.indexone {
+    position: relative;
+    padding-top: 30%; 
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    display: inline-flex;
+    flex-direction: column;
+    padding-bottom: 3.5%;
+}
+
+.indexh1 {
+    position: absolute;
+    visibility: hidden;
+}
+
+.indexh2 {
+    text-align: center;
+    color: azure;
+    text-shadow: 5px 5px 10px black;
+    font-size: 4em;
+    bottom: 10%;
+    padding-top: 15%;
+    margin-top: 0;
+    transition: 0.5s;
+}
+
+.indexh2 span {
+    font-family: 'Homer Simpson Revised', sans-serif;
+    color: azure;
+    text-shadow: 5px 5px 10px black;
+    font-size: 1.6em;
+}
+
+.indexone p {
+    padding-bottom: 70px;
+}
+
+.indexone h2 {
+    font-family: 'Homer Simpson Revised', sans-serif;
+    font-size: 3.5em
+                                                
+}
+
+/* NOTES (02/05/24) https://developer.mozilla.org/en-US/docs/Web/CSS/calc
+
+/* ========================== INDEX PAGE CONTENT AREA TWO ================================ */
+
+.indextwo {
+    background-color: #eee9d9;
+    display: flex;
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    padding-bottom: 5%;
+}
+
+.indextwo h3 {
+    font-size:  1.7em;
+}
+
+.indextwo section {
+    padding: 20px;
+}
+
+.indextwo img {
+    width: 85%; height: auto;
+    transition: 0.5s;
+}
+
+.indextwo a {
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+.indextwo a:hover {
+    color:maroon;
+    transition: 0.5s;
+}
+
+/* 
+    NOTES (02/05/24) I had a TON of issues with getting this to work, but I am at the point where it works and I am satisfied with the layout, the issue I had was the text and image were not aligning correctly and I went through a ton of searching to get it to inevitably work. My solution was to refer to the weekly workshop activites and found the soultion in seperating the content between <sections> in an <aside> tag. I mentioned in my HTML comments during the project proposal stage that I wanted to recify the issue with prior knowledge by placing all the content into articles and sections respectively, but within CSS I have completley understood why that was done in the first place. I felt angry and upset with all the trial and error but solving this can hopefully allow my to work on other page elements more effectivley. */
+
+/* =========================== ABOUT PAGE CONTENT AREA ONE =============================== */
+
+.aboutone {
+    position: relative;
+    padding-top: 8%; 
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    display: inline-flex;
+    flex-direction: column;
+    padding-bottom: 3.5%;
+}
+
+.aboutone img {
+    width: 150%;
+    margin-top: 8%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+/* =========================== ABOUT PAGE CONTENT AREA TWO =============================== */
+
+.abouttwo {
+    position: relative;
+    padding: 0% 15%;
+}
+
+.abouttwo span {
+    font-family: 'Homer Simpson Revised', sans-serif;
+    font-size: 1.6em
+}
+
+
+.systemslist {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.systemsitem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.systemsitem .gctext {
+    font-size: 1.3em;
+}
+
+.systeminfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 20px;
+}
+
+.abouttwo a {
+    color: white;
+}
+
+/* ================================= ABOUT PAGE BUTTON ====================================*/
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* ============================ CHEATS PAGE CONTENT AREA ONE ============================= */
+
+.cheatsone {
+    position: relative;
+    padding-top: 9%;
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    display: inline-flex;
+    text-align: center;
+    flex-direction: column;
+    padding-bottom: 3.5%;
+}
+
+.cheatsone h2 {
+    font-family: 'Homer Simpson Revised', sans-serif;
+    font-size: 4em;
+}
+
+.cheatsone p {
+    padding-right: 3%;
+}
+
+.cheatsone dl {
+    display: flex;
+    flex-flow: row wrap;
+    border-width: 1px 1px 0 0;
+  }
+.cheatsone  dt {
+    flex-basis: 40%;
+    padding: 2px 4px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.3em
+  }
+.cheatsone  dd {
+    flex-basis: 70%;
+    flex-grow: 1;
+    text-align: left;
+    margin: 0;
+    padding: 2px 4px;
+  }
+
+/* 
+    NOTES (11/05/24) There was some concern going into this from the problems that I had recently with other pages, and considering I wrote the content in html with a definition list (dl) in mind, I had no idea if doing the section copy and alter tactic would work. It didnt at first, as I was having issues with the text scaling down with the page, so I wanted to look to how others have tackled a similar problem, my solution was from The Art of Web, which had a guide to formatting a definition list. Apply the same code to my CSS allowed it to work, but I was still having some issues.
+
+    My images were snapped to the left of the list, and if I made any changes to the padding to move it towards the right, the image doesnt scale with the screen size, So I did some manual altercations with the images and it works. I want to run it by with the lecturer if its on the right track, or needs some more altering. */
+
+.cheatcode_image {
+    padding-left: 500px;
+    transition: 0.5s;
+}
+/* =========================== CHEATS PAGE CONTENT AREA TWO ============================== */
+
+.cheatstwo {
+    position: relative;
+    padding-top: 5%; 
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    display: inline-flex;
+    flex-direction: column;
+    padding-bottom: 3.5%;
+}
+
+.cheatstwo p {
+    margin-top: 0px;
+}
+
+.cheatstwo img {
+    padding-right: 30px
+}
+
+.cheatstwo h2 {
+    font-family: 'Homer Simpson Revised', sans-serif;
+    font-size: 2.7em;
+}
+
+/* ====================== LEVEL SELECTION PAGE CONTENT AREA ============================== */
+
+.levels {
+    position: relative;
+    padding-top: 8%; 
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    display: inline-flex;
+    flex-direction: column;
+    padding-bottom: 3.5%;
+    transition: 0.5s;
+}
+
+.levels h2 {
+    font-family: 'Homer Simpson Revised', sans-serif;
+    text-align: center;
+    font-size: 5em;
+    padding-left: 5%;
+}
+
+.levels h3 {
+    font-family: 'Homer Simpson Revised', sans-serif;
+    font-size: 2.2em;
+    padding-right: 50px;
+}
+
+.levels p {
+    padding-right: 125px;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.levels a {
+    font-size: 2.5em;
+}
+
+/* 
+    NOTES (09/05/24) WOW, this was a pain and was becoming too much since there was a lot of time in class to work on the project and It felt like no matter what changes, the outcome I wanted didnt feel right. My goal was to include a main image on the right, with a header for each level and two small icon images (plus MISSION and COLLECTABLE links) on the left side, the problem was getting the images to work properly. Any adjustments in CSS applied to all 3 images, so I tried to split them, but that was creating its own problem. When trying to get it to work for web responsivness the images kept sporatically adjusting the flexbox and ruining the structure. To solve it, I had to cut things, such as the 2 small icon images to get the flexbox to properly adjust to the change of screen size.  */
+
+.lvlmissions {
+    background-image: url(images/img_background_missions.jpg);
+    background-size: 100%;
+    border: 1px solid #007bff;
+    border-radius: 12px;
+}
+
+.lvlcollect {
+    background-image: url(images/img_background_collect.jpg);
+    background-size: 100%;
+    border: 1px solid #007bff;
+    border-radius: 12px;
+}
+
+/* ======================== LEVEL ONE MISSIONS PAGE CONTENT AREA ========================= */
+
+.lvlonemissions {
+    position: relative;
+    padding-top: 13%; 
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+}
+
+.lvlonemissionstwo {
+    text-align: center;
+    padding-bottom: 5%;
+    transition: 0.5s;
+}
+
+.lvlonemissionstwo:hover {
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+
+/* ================================= FLEXBOX SECTION A ====================================*/
+
+#sectionA {
+    display: flex;
+    padding: 25px;
+}
+
+#sectionA  h2 {
+    margin: 0;
+}
+
+#sectionA  div {
+    padding-top: 2.5%;
+    padding-left: 1%;;
+}
+#sectionA p {
+    padding-top: 10%;
+}
+
+/* ================================= FLEXBOX SECTION B ================================= */
+
+#sectionB {
+    display: flex;
+    padding: 25px;
+}
+
+#sectionB  h2 {
+    margin: 0;
+}
+
+#sectionB  div {
+    padding-top: 2.5%;
+    padding-left: 2.5%;
+}
+#sectionB p {
+    padding-top: 15%;
+}
+
+/* ================================= FLEXBOX SECTION C ================================= */
+
+.sectionC {
+    display: flex;
+    padding: 20px;
+}
+
+.sectionC  h3 {
+    text-align: center;
+    padding: 20px;
+}
+
+.sectionC  div {
+    padding-top: 2.5%;
+    padding-left: 1%;;
+}
+.sectionC p {
+    text-align: center;
+    color: azure;
+    text-shadow: 5px 5px 10px black; 
+    padding: 4%;
+}
+
+.sectionC img {
+    padding: 20px;
+    width: 60%;
+    padding-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.sectionC a {
+    color: azure;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 4%;
+}
+
+.sectionC a:hover {
+    color: indianred;
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+
+/* ================================= FLEXBOX SECTION D ================================= */
+
+.sectionD {
+    display: flex;
+    padding: 20px;
+}
+
+.sectionD  h3 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5em;
+    background-color: skyblue;
+}
+
+.sectionD  div {
+    padding-top: 2.5%;
+    padding-left: 1%;;
+}
+.sectionD p {
+    text-align: left;
+    padding: 4%;
+    background-color: beige;
+}
+
+.sectionD img {
+    padding-top: 84px;
+}
+
+/* ================================= FLEXBOX SECTION E ================================= */
+
+#sectionE {
+    display: flex;
+    padding: 25px;
+}
+#sectionE p {
+    padding-top: 5%;
+}
+
+#sectionE dfn {
+    font-size: 1.5em;
+    font-style: normal;
+}
+
+
+ /* NOTE: This is to reduce the margins used in the level one missions page */
+
+#smrt {
+    margin-bottom: 0px;
+}
+
+#petty_theft_homer {
+    margin-bottom: 0px;
+}
+
+#office_spaced {
+    margin-bottom: 0px;
+}
+
+#big_blind_brother {
+    margin-bottom: 0px;
+}
+
+#flowers_by_irene {
+    margin-bottom: 0px;
+}
+
+#bonestorm_storm {
+    margin-bottom: 0px;
+}
+
+#fat_and_furious {
+    margin-bottom: 0px;
+}
+
+    /* =========================    FOOTER    ========================= */
+
+footer {
+    color: aliceblue;
+    background-color: black;
+    position: relative;
+    padding-left: calc((100% - 1366px) / 2);
+    padding-right: calc((100% - 1366px) / 2);
+    text-align: left;
+    display: flex;
+    padding-bottom: 20px; padding-top: 10px;
+}
+
+footer p {
+    padding-left: 2%;
+}
+
+footer address {
+    padding-left: 20%;
+    padding-right: 2%;
+}
+
+    /* ===================    DISPLAY ADJUSTMENT (@media)    =================== */
+
+@media (max-width: 1600px) {
+    .levels {
+        padding-top: 4px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 1538px) {
+    #missionsnav {
+        display: none;
+    }
+    
+    nav a {
+        padding: 50px;
+    }
+    nav a:hover{
+        padding: 50px 20px 20px 20px;
+    }
+    .indexh2 {
+        font-size: 3em;
+        margin-top: 7%;
+        padding: 150px 50px 0 50px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 1327px) {
+    .homevid {
+        display: none;
+    }
+    
+    .indexone {
+        padding-top: 0px;
+        transition: 0.5s;
+    }
+    
+    .indexh2 {
+        background-color: black;
+        font-size: 3em;
+        padding: 0px 50px 0 50px;
+    }
+    
+    .abouth1 {
+        font-size: 6em;
+    }
+    
+    .lvl1h1 {
+        font-size: 6em;
+    }
+}
+
+@media (max-width: 1158px) {
+    .cheatsh1{
+        font-size: 6em;
+    }
+}
+
+@media (max-width: 1050px) {
+    nav a {
+        padding: 10px;
+    }
+    
+    nav a:hover{
+        padding: 20px 20px 20px 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    
+    footer {
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 5em;
+        color: azure;
+        text-shadow: none;
+        background-color: black;
+        padding: 40px 0 40px 0;
+        transition: 0.5s;
+    }
+    
+    .indexh1 {
+        font-size: 6em;
+    }
+    
+    .bannerimage {
+        display: none;
+    }
+    
+    .indexone {
+        display: block;
+        text-align: left;
+    }
+    
+    .cheatcode_image {
+        padding-left: 0px;
+        transition: 0.5s;
+    }
+    
+    .levels {
+        padding-top: 0px;
+        display: block;
+        text-align: left;
+    }
+    
+    .cheatsh1 {
+        font-size: 4.5em;
+    }
+    
+    .levels h2 {
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    #sectionA {
+        flex-direction: column;
+    }
+    
+    #sectionA img {
+        width: 100%; height: auto
+    }
+    
+    #sectionB {
+        flex-direction: column;
+    }
+    
+    #sectionB p {
+        padding-top: 20px;
+    }
+    
+    #sectionB img {
+        width: 100%; height: auto;
+    }
+    
+    .sectionC {
+        flex-direction: column;
+        padding-left: 0px;
+        
+    }
+    
+    .sectionC img {
+        padding: 0px;
+        width: 118%; height: auto;
+    }
+    
+    .sectionD {
+        flex-direction: column;
+        padding-left: 0px;
+        
+    }
+    
+    .sectionD img {
+        padding-left: 0px;
+        width: 100%; height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.7em;
+    }
+    
+    .bannerimage {
+        display: none;
+    }
+    
+    .indexh2 {
+        background-color: black;
+        font-size: 2em;
+        margin-top: 25%
+    }
+    
+    .abouth1 {
+        margin-top: 25%;
+    }
+    
+    .levelsh1 {
+        margin-top: 25%;
+    }
+    
+    .cheatsh1 {
+        margin-top: 25%;
+    }
+    
+    .lvl1h1 {
+        margin-top: 25%;
+        padding-bottom: 0px;
+    }
+    
+    .lvlonemissions {
+        padding-top: 0px;
+    }
+    
+    .sectionD img {
+        width: 100%; height: auto;
+    }
+    
+    h1 {
+        margin-top: 10%;
+    }
+    
+    nav a {
+        text-align: center;
+        padding: 10px;
+    }
+    nav a:hover{
+        padding: 5px;
+    }
+    
+    .indextwo img {
+        width: 100%; height: auto;
+        transition: 0.5s;
+    }
+
+    
+    /* 
+    NOTES (11/05/24) There are a lot of switches, particuarly for situations where the nav bar needs changing, this is something I probably need to run by with the lecturer on if it is allowed and acceptable.  */
+    
+}
+
+/*  I've added a progress update to provide reflection and notes based on work towards Assessment 2 that is substantial
+
+    PROGRESS UPDATE (26/04/24), Today I wanted to finish off the CSS for the Navigation Bar (NOT TO SAY THAT IT IS FINALSIED, just at a point where I am happy with how it turns out) aswell as the Footer, I also wanted to sort out the page layout and banner 
+
+    NO Validation Errors occuring for, all html files (outside of lorem ipsum related errors which will be changed when actual content is added in) but the CSS had a couple of errors, line 69 did not have correct descriptions of padding, which was changed quickly, and there was a rouge line of code related to transition duration, which I didnt need and was part of the CSS for the drop down nav bar in the 'Level-1 Missions' Page. Resolving these errors and running it through the validator showed no errors.
+    
+    PROGRESS UPDATE (02/05/24), There was a lot of trial and error, aswell as frustrations to get some of the elements working, I made some last minute altercations to my header/navbar and footer to get to a point where the desktop presentation is exacly how I wanted it to be, one change suggested from the lecturer is to adjust the level one missions nav bar to go below the main nav bar to avoid any confusion, the biggest issue I had however was with developing the two-column flexbox for the main page, which had a lot of issues that caused a lot of frustrations. Because it was solved I worked on sections of the webpages that were similar (abouts page etc...) with the codes I already used, I am also not looking forward to having to alter the content to fit onto different sized devices as the furstrating parts of getting everything in place, could potentially be amplified in smaller screens. 
+
+    PROGRESS UPDATE (11/05/2024) Want to clarify everything that has happened since Week 11 class where I was stuck on a lot of things, my concern was getting everything ready in time or being too ambitious or crazy with making each page unique, I had to take a step back and look at what was currently working, the index.html page was working as inteneded, and the style of each other page was more or less the same, so all I had to do was get the codes (such as sectionA or B etc...) and post them across the other lines of html code on other pages. Next, I made adjustments to padding or scale of items to fit the desktop, then work down to mobile.
+
+    PROGRESS UPDATE (16/05/2024) After a few weeks of turmoil and struggles, I have finally reached a point in the progress of the site that has unique images for each page, each page strucutre is effective and web responsive, all that is left before submission next week is to update all the text to be related to the site and upload to the web.
+
+    PROGRESS UPDATE (22/05/2024) All the text has been added and every file has been verified, including this CSS sheet. I did want to add the image to the footer, but due to time constraints I wont be able to when I have to add the manuals and upload the site to the web; I have added to validated code here if that means enough. 
+
+    <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                src="http://jigsaw.w3.org/css-validator/images/vcss"
+                alt="Valid CSS!" />
+        </a>
+    </p>
+    */
+    

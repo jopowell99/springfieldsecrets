@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html lang="en">
+        
+        <head>
+            <meta charset="UTF-8">
+            <title>Springfield Secrets: A Simpsons Hit &amp; Run Guide</title>
+            <link rel="stylesheet" href="style.css">
+        </head>        
+<!-- ===========================      HEADER    =========================== -->
+            <!-- NOTES (18/04/2024): A major issue was noticed when starting the CSS conversion, my HTML files dont have a <body> tag, even though my validator came up with no issues, which was really confusing because the <body> tag is very important in CSS. I have added in the tags on the pages after the fact but I am still frustrated at this blunder. -->
+        <body>
+            <div id="wrapper">
+                <header>   
+<!-- ===========================    NAVIGATION  =========================== --> 
+                <img class="logo" src="images/img_placeholder_logo.png" Title="Springfield Secrets: A Simpsons Hit and Run Guide" alt="springfield secrets a simpsons hit and run guide" width="125" height="125">
+                <nav>
+                    <a href="index.html" title="Home">Home</a>
+                    <a href="levels.html" title="Levels">Levels</a>
+                    <a href="cheats.html" title="Cheats">Cheats</a>
+                    <a href="about.html" title="About">About</a>
+                    <a href="contact.html" title="Contact Us">Contact</a>
+
+                <!-- NOTES: Contact page has a link to an unknown html, which is not an error as I didn't focus on the contact page, it has a similar intended framework to the About page -->
+                    </nav>
+                        <h1 class="indexh1">The Simpsons Hit &amp; Run</h1>
+                        <h2 class="indexh2">Welcome to <span>Springfield Secrets</span> <br> A Guide for <span>The Simpsons Hit &amp; Run</span></h2>
+                </header>
+
+                <!-- NOTES: After building the header and footer sections of the code (and applying it to each page) the biggest question I was going over was the <h1> tag, throughout the weeks we have examined how significant a <h1> tag is to the overall hierarchy and visibility on SEO (Search Engine Optimization) -->
+
+        <!-- ==========================  CONTENT AREA 1  ========================== -->
+                <main>
+                    <video class="homevid" width="1366" height="768" controls autoplay muted loop> 
+                <!-- NOTES (05/04/2024): As this is during the HTML only phase of the project and without the usage of CSS, I cannot incorporate the blurred filter affect that the <h1> will sit in front of. Regardless I wanted to find out how to create the effect and came across an example from https://jsfiddle.net/dustinkerstein/65v7pkna/ that will be useful when working on the finished project. What I could do in HTML however was adding in elements to make the video autoplay muted and be in a constant loop --> 
+
+                        <source src="images/vid_placeholder_gameplay.mp4" type="video/mp4">
+                        <source src="images/vid_ohdear.ogv" type="video/ogv">
+                        <source src="images/vid_placeholder_gameplay.webm" type="video/webm">
+                            <p>Your browser does not support HTML5 video</p>
+                    </video>
+
+                <!-- NOTES: For the placeholder video I chose a fan recreation of the original trailer of the game from 2003 (by 'Steven Reviews'), but I needed to optimize the video for the web, which I needed to find the best method as to how. Handbrake is an effective application to optimize the file, but because the video was over 1min30sec, it complicates things. Videos that serve as hero/background content should be kept short, something no longer then 15-20 seconds (Masuga, 2022) So I trimmed down the video to help optimize the media, but since this is a placeholder, I will develop a more refined version for the final site 
+
+               Link to Reference: https://www.gomasuga.com/blog/best-practices-for-html-background-videos -->
+
+                    <div class="indexone">
+                        <section id="sectionA">
+                           <div>
+                                <h2>Tips and Tricks for Every Level</h2>
+                                <p>A complete guide to obtaining every <b>collectable</b> and completing every <b>mission</b> avaliable in the game. Aswell as general stratagies to help throughout your playthrough.</p>
+                           </div>
+                            <img src="images/img_guide.jpg" title="Level Guide" alt="" width="680" height="382">
+                        </section>
+
+                        <section id="sectionB">
+                            <img src="images/img_cheats.jpg" alt="CheatIndex" width="680" height="382">
+                            <div>
+                                <h2>A Definitive Cheat Index</h2>
+                                <p>Want to know a specific cheat to gain the upper hand or to just mess around in the world? Included is the <b>full list</b> of avaliable cheats and how to input them on each avaliable system.</p>
+                            </div>
+                        </section>
+                    </div>
+                    
+                </main>
+    <!-- ==========================  CONTENT AREA 2  ========================== -->
+                       
+                    <aside class="indextwo">
+                        <section>
+                            <img src="images/img_conceptart.png" title="titlescreen" alt="title">
+                                <h3>Learn more about the Game</h3>
+                                <p>Go back in time to 2003 and view the promotional material, concept art, early prototypes and interviews from the development of The Simpsons Hit &amp; Run! </p>
+                        </section>
+                        <section>
+                            <img src="images/img_donutteam.png" title="donutteamlogo" alt="donutteam">
+                                <h3>Support the Community</h3>
+                                <p>Want to go further with the game? Look no further then <a href="http://www.donutteam.com" title="Donut Team" rel="external" target="_blank"> <strong>Dount Team,</strong> </a> who are pushing the game to the limits from community made mods and fourms!</p>
+                        </section>
+                        
+                <!-- NOTES (15/05/2024): The amount of text is important for each section, so that one isnt going to extend further then the other, -->
+                   
+                    </aside>
+                    
+                    
+
+                <!-- NOTES: From the sections across the two content areas, certain words in the lorem ipsum are in english (representitive of the content) and highlighted either <b> or <strong>, throughout our studies, I have learned the difference and importance of each, with <b> being a style based tag to bold text, wheras <strong> actually gives the word significance, in the case of my webpage, 'Donut Team' is tagged <strong> as it is a external link. -->
+    <!-- ===========================      FOOTER    =========================== -->
+                <footer>
+                    <p>Copyright &copy; - Springfield Secrets, 2023</p>
+                    
+                    <address>
+                        Visit <a href="springfield@secrets.com">springfield@secrets.com</a> for more infomation <br>
+                        Phone - 0123 456 789
+                    </address>
+                    
+                </footer>
+            </div>
+        </body>
+    </html>
+    
+        <!-- NOTES: Validating the webpages is integral towards the functionality of the website, and over the weeks an error regarding <section> tags, inside <article> tags which displays the issue, "Article lacks heading, consider using H2-H6 elemens to add identifying headings to all articles", initially applying a aria element solves the issue but with prior knowledge from validating the weekly tutorials, I wanted to look further into the issue before validating. I came across infomation from the fourms of freeCodeCamp.org (2022) that outlines the difference between aritcles and sections. An article is standalone, wheras a section groups content thematically related to eachother. So I assigned the respective content of each page to either respective groups of info <section>, or a indiviual piece of infomation if relevent <article>.
+        
+            Link to Reference: https://forum.freecodecamp.org/t/article-vs-section/493173 -->
+    
+<!-- ===========================    REFERENCES   ========================== -->
+
+<!-- Included in the submission is a list of links for the images used and proper APA 7th references to any references used. -->
